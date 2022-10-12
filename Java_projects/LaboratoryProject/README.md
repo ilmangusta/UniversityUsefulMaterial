@@ -9,3 +9,8 @@ I tesisti richiedono l'uso esclusivo di un solo computer, identificato dall'indi
 Programma Java che simula il comportamento degli utenti e del tutor.
 Il programma riceve in ingresso il numero di studenti, tesisti e professori che utilizzano il laboratorio ed attiva un thread per ogni utente.
 Ogni utente accede k volte al laboratorio, con k generato casualmente.
+
+Compilazione con Makefile:
+1. "make" per compilazione
+2. "make run" per eseguire codice con parametri
+3. "make class" per rimuovere file oggetto .class
