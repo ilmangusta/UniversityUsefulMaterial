@@ -2,9 +2,9 @@ Il laboratorio di Informatica del Polo Marzotto è utilizzato da tre tipi di ute
 I professori accedono in modo esclusivo a tutto il laboratorio, poichè hanno necessità di utilizzare tutti i computer per effettuare prove in rete.
 I tesisti richiedono l'uso esclusivo di un solo computer, identificato dall'indice i.
 
-1.Gli studenti richiedono l'uso esclusivo di un qualsiasi computer.
-2.I professori hanno priorità su tutti nell'accesso al laboratorio, 
-3.i tesisti hanno priorità sugli studenti. Nessuno però può essere interrotto mentre sta usando un computer.
+1. Gli studenti richiedono l'uso esclusivo di un qualsiasi computer.
+2. I professori hanno priorità su tutti nell'accesso al laboratorio, 
+3. i tesisti hanno priorità sugli studenti. Nessuno però può essere interrotto mentre sta usando un computer.
 
 Programma Java che simula il comportamento degli utenti e del tutor.
 Il programma riceve in ingresso il numero di studenti, tesisti e professori che utilizzano il laboratorio ed attiva un thread per ogni utente.
