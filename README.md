@@ -1,2 +1,4 @@
 # University_stuff
-Drive for projects and other useful University material
+Archive for University materials
+
+1. Assignment and projects;
