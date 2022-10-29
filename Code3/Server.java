@@ -3,6 +3,8 @@ import java.io.*;
 import java.net.*;
 import java.util.concurrent.ThreadLocalRandom;
 
+//TODO: Move methods Combatti() and Bevi() to player class;
+
 public class Server implements Runnable {
 
     public Socket socket;
@@ -11,7 +13,6 @@ public class Server implements Runnable {
         this.socket=socket;
         this.id=id;
     }
-
     public int combatti(Player player,Monster monster){
         int res=(int)Math.floor(Math.random()*(player.pv-0+1)+0);
         player.pv=player.pv-res;
