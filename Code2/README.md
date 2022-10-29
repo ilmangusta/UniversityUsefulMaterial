@@ -1,4 +1,4 @@
-###ASSIGNMENT CONTA OCCORRENZE
+### ASSIGNMENT CONTA OCCORRENZE
 
 Viene chiesto di scrivere un programma che conta le occorrenze dei caratteri alfabetici 
 (lettere dalla "A" alla "Z") in un insieme di file di testo. 
