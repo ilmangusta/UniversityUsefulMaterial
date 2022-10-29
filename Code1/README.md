@@ -8,7 +8,7 @@ Il laboratorio di Informatica è utilizzato da tre tipi di utenti (studenti, tes
 
 In questa versione del programma, vengono soddisfatti i seguenti criteri:
 
-1. I professori hanno priorità su tutti nell'accesso al laboratorio, i tesisti hanno priorità sugli studenti. Nessuno però può essere interrotto mentre sta usando un computer.
-2. Il programma riceve in ingresso il numero di studenti, tesisti e professori che utilizzano il laboratorio ed attiva un thread per ogni utente.
-3. Ogni utente accede k volte al laboratorio, con k generato casualmente.
-4. Il programma termina quando tutti gli utenti hanno completato i loro accessi al laboratorio.
+- I professori hanno priorità su tutti nell'accesso al laboratorio, i tesisti hanno priorità sugli studenti. Nessuno però può essere interrotto mentre sta usando un computer.
+- Il programma riceve in ingresso il numero di studenti, tesisti e professori che utilizzano il laboratorio ed attiva un thread per ogni utente.
+- Ogni utente accede k volte al laboratorio, con k generato casualmente.
+- Il programma termina quando tutti gli utenti hanno completato i loro accessi al laboratorio.
