@@ -1,0 +1,53 @@
+[
+    {
+        "owner": "franco",
+        "records": [
+            {
+                "date": "Sep 22, 2020 1:32:19 PM",
+                "reason": "ACCREDITO"
+            },
+            {
+                "date": "Nov 19, 2019 10:08:21 AM",
+                "reason": "F24"
+            },
+            {
+                "date": "Aug 29, 2019 4:30:45 PM",
+                "reason": "ACCREDITO"
+            }
+        ]
+    },
+    {
+        "owner": "pippo",
+        "records": [
+            {
+                "date": "Sep 22, 2020 1:32:19 PM",
+                "reason": "BOLLETTINO"
+            },
+            {
+                "date": "Nov 19, 2019 10:08:21 AM",
+                "reason": "ACCREDITO"
+            },
+            {
+                "date": "Aug 29, 2019 4:30:45 PM",
+                "reason": "F24"
+            }
+        ]
+    },
+    {
+        "owner": "carl",
+        "records": [
+            {
+                "date": "Sep 12, 2020 1:32:19 PM",
+                "reason": "F24"
+            },
+            {
+                "date": "Nov 9, 2019 10:08:21 AM",
+                "reason": "ACCREDITO"
+            },
+            {
+                "date": "Aug 2, 2019 4:30:45 PM",
+                "reason": "PAGOBANCOMAT"
+            }
+        ]
+    }
+]
