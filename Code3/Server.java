@@ -3,7 +3,10 @@ import java.io.*;
 import java.net.*;
 import java.util.concurrent.ThreadLocalRandom;
 
-//TODO: Move methods Combatti() and Bevi() to player class;
+//per la terminazione del server ho deciso di lasciare questa implementazione per realizzare la versione
+//piu verosimilmente vicina alla realtà. Il socket server rimarrà sempre in attesa ad accettare nuove richieste 
+//se compariranno client (giocatori) nuovi. In alternativa avrei potuto mettere un numero fissato
+//di giocatori al massimo accettati dal server (per esempio scelti all'inizio del gioco o passati come parametro)
 
 public class Server implements Runnable {
 
@@ -13,24 +16,23 @@ public class Server implements Runnable {
         this.socket=socket;
         this.id=id;
     }
-    public int combatti(Player player,Monster monster){
-        int res=(int)Math.floor(Math.random()*(player.pv-0+1)+0);
+
+    public int combatti(Player player,Monster monster){ //combatto, genero danno casuale e aggiorno vita
+        int res=ThreadLocalRandom.current().nextInt(1,player.pv+1); //thread safe
         player.pv=player.pv-res;
         monster.pv=monster.pv-res;
         return res;
     }
-    public int bevi(Player player){
-        if(player.potion<=0){
-            return 0;
-        }
-        int quantita=(int)Math.floor(Math.random()*(player.potion-1+1)+1);
+    public int bevi(Player player){ //bevo pozione agiorno pozione e vita player
+        if(player.potion<=0){return 0;}
+        int quantita=ThreadLocalRandom.current().nextInt(1,player.potion+1); //rhead safe
         player.pv=player.pv+quantita;          
         player.potion=player.potion-quantita;      
         return quantita;
     }
 
     public void run(){
-
+        //inizializzo variabili per lettura e scrittura su socket
         Scanner scanner=new Scanner(System.in);
         String line;
         Player player;
@@ -44,11 +46,9 @@ public class Server implements Runnable {
                 if(line.contentEquals("2")){player=new Player("Elfo");out.println("Elfo "+player.pv);break;}
                 if(line.contentEquals("3")){player=new Player("Gnomo");out.println("Gnomo "+player.pv);break;}
                 if(line.contentEquals("4")){player=new Player("Robottone");out.println("Robottone "+player.pv);break;}
-                else{
-                    out.println("no"); 
-                }
+                else{out.println("no");} //non ho ricevuto input giusto
             }
-            while(in.hasNextLine()){
+            while(in.hasNextLine()){ //inizio comunicazione client-server
                 line=in.nextLine();
                 int res;
                 String result;
@@ -56,7 +56,7 @@ public class Server implements Runnable {
                     out.println("Hai fatto il fugone! Hai perso!");
                     break; //esci
                 }
-                if(line.contentEquals("1")){
+                else if(line.contentEquals("1")){
                     res=combatti(player,monster); //ritorna i danni subiti
                     if(monster.pv<=0 && player.pv<=0){
                         out.println("draw");
@@ -75,7 +75,7 @@ public class Server implements Runnable {
                     out.println(result);
                     continue;
                 }
-                if(line.contentEquals("2")){ //bevi pozione
+                else if(line.contentEquals("2")){ //bevi pozione
                     res=bevi(player); //quanta pozione beve
                     if(res==0){
                         out.println("Pozione finita!!");
@@ -84,6 +84,8 @@ public class Server implements Runnable {
                     String totalHp="Pozione bevuta! Vita totale: "+(player.pv)+ " - Pozione rimanente: "+player.potion;
                     out.println(totalHp);
                     continue;       
+                }else{
+                    out.println("Fail");
                 }
             }
         } catch (Exception e) {
